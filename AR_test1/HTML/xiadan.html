@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="description" content="圆通速递 圆通会员系统">
+  <title>下单</title>
+  <link rel="apple-touch-icon" href="/assets/images/logo/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/assets/images/logo/YTO-favicon.ico">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../CSS/bootstrap.css">
+  <link rel="stylesheet" href="../CSS/xiadan.css"> 
+</head>
+
+<body class="body-order">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle navbar-menubar" id="menu">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#userinfo"
+					aria-expanded="false">
+					<span class="icon fa-user"></span>
+				</button>
+				<a class="navbar-brand" href="/user/index.htm"> <img
+					title="物流管理系统系统" src="/assets/images/logo/logo.png"
+					class="navbar-brand-logo"> <span class="navbar-brand-text">下单</span>
+
+				</a>
+				<div class="navbar-other hidden-xs">2018，全新开始</div>
+			</div>
+			<div class="collapse navbar-collapse" id="userinfo">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="login.html"> 登录 </a></li>
+					<li><a href="register.html">注册</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="page">
+		<div class="container m_top_20">
+				<form method="post" action=""  id="form">
+				<input name="app.code" value="YTOWEB" type="hidden"/>
+				<div class="form-inline m_bottom_20 clearfix">
+					<div class="form-group yto-hy-link">
+					   <a href="#"><img src="/assets/images/photos/hyuan.jpg"></a>
+					</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4">
+							<div  class="yto-item">
+                           <h5 class="yto-item-hd item-org">寄件方</h5>
+								<div class="form-group form-material">
+								    <label class="control-label">真实姓名</label>
+									<input type="text" name="sendName" class="form-control" placeholder="请输入姓名">
+								</div>
+								<div class="form-group form-material">
+									<label class="control-label">省/市/区</label>
+									<input type="text" id="sendRegion" data-regionId="sendRegionId" class="form-control" placeholder="请输入省市区" />
+									<input type="hidden" name="sendRegionId" value=""  id="sendRegionId2"/>
+
+								</div>
+								<div class="form-group form-material">
+									<label class="control-label">地址</label>
+								<input type="text" name="sendAddress" class="form-control" placeholder="请输入详细地址" value="" id="sendAddress"/>
+								</div>
+								<div class="form-group form-material">
+									<label class="control-label">手机</label>
+									<input type="text" name="sendMobile" class="form-control" placeholder="手机或电话必填一项">
+								</div>
+								<div class="form-group form-material">
+									<label class="control-label">电话</label>
+									<input type="text" name="sendPhone" class="form-control" placeholder="如：020-88888888">
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+						   <div class="yto-item">
+						     <h5 class="yto-item-hd item-green">收件方</h5>
+							<div class="form-group form-material">
+								<label class="control-label">真实姓名</label>
+								<input type="text" name="receiveName" class="form-control" placeholder="请输入姓名">
+							</div>
+							<div class="form-group form-material">
+								<label class="control-label">省/市/区</label>
+								<input type="text" id="receiveRegion" data-regionId="receiveRegionId" class="form-control" placeholder="请输入省市区" />
+							    <input type="hidden" name="receiveRegionId"  value="" id="receiveRegionId2" />
+							</div>
+							<div class="form-group form-material">
+								<label class="control-label">地址</label>
+								<input type="text" name="receiveAddress" id="receiveaddress" class="form-control" placeholder="请输入详细地址" >
+							</div>
+							<div class="form-group form-material">
+								<label class="control-label">手机</label>
+								<input type="text" name="receiveMobile" class="form-control" placeholder="手机或电话必填一项">
+							</div>
+							<div class="form-group form-material">
+								<label class="control-label">电话</label>
+								<input type="text" name="receivePhone" class="form-control" placeholder="如：020-88888888">
+							</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+					<div class="yto-item">
+					   <h5 class="yto-item-hd">物品信息</h5>
+					    <div class="form-group form-material">
+								<label class="control-label">增值服务</label>
+								<input type="text" name="remark" id="receiveRemark" class="form-control appreciation-input" maxlength="100" placeholder="请选着下面的内容或者输入其他内容" />
+								 <ul class="list-value list-value-appreciation">
+									<li >
+										<input class="btn btn-default btn-sm " value="需要纸箱" type="button" name="remark" id="receiveRemark" />
+									</li>
+									<li >
+										<input class="btn btn-default btn-sm"  value="需要爬楼" type="button" name="remark" id="receiveRemark"  />
+									</li>
+									<li>
+										<input class="btn btn-default btn-sm" value="缺文件袋" type="button" name="remark" id="receiveRemark"/>
+									</li>
+									<li >
+										<input class="btn btn-default btn-sm" value="需要胶带" type="button" name="remark" id="receiveRemark" />
+									</li>
+									<li>
+										<input class="btn btn-default btn-sm" value="上门请联系我" type="button" name="remark" id="receiveRemark"  />
+									</li>
+									<li>
+										<input class="btn btn-default btn-sm" value="贵品保价" type="button" name="remark" id="receiveRemark"  />
+									</li>
+								</ul>
+							</div>
+						<div class="form-group form-material">
+								<label class="control-label">内件品名</label>
+								<input type="text" name="orderProductList[0].name" id="productName" class="form-control user-input" maxlength="100" placeholder="请输入物品的名称" />
+								 
+							</div>
+							<div class="form-group form-material">
+								<label class="control-label">物品重量（kg）</label>
+								<input id="weight" type="text" name="orderProductList[0].weight" class="form-control weight-input" placeholder="请输入物品的大概重量"><span id="errorWeight"></span>
+								<ul class="list-value weight-value">
+									<li >
+										<input class="btn btn-default btn-sm " value="1KG" type="button" name="orderProductList[0].weight" />
+									</li>
+									<li >
+										<input class="btn btn-default btn-sm"  value="1.5KG" type="button" name="orderProductList[0].weight" />
+									</li>
+									<li>
+										<input class="btn btn-default btn-sm" value="2KG" type="button" name="orderProductList[0].weight"/>
+									</li>
+									<li >
+										<input class="btn btn-default btn-sm" value="2.5KG" type="button" name="orderProductList[0].weight" />
+									</li>
+									<li>
+										<input class="btn btn-default btn-sm" value="3KG" type="button" name="orderProductList[0].weight"  />
+									</li>
+								</ul>
+								
+								<!-- <input id="estimatedFreight" type="button" class="btn btn-default btn-sm weight-btn" name="estimatedFreight" value="计算预计运费"> -->
+							</div>
+							
+						<div class="check-position">
+							     <div class="form-group form-material">
+	                             <label for="agingProducts" >时效产品</label>
+									   <div id="getProductType">
+									   		<input name='siteCode' id='siteCode' type='hidden'  value=""></input>
+									   		<input name='siteName' id='siteName' type='hidden'  value=""></input>
+									   		<input name='serviceType' id='serviceType' type='hidden'  value=""></input>
+									  </div>
+	                             <input type="text" class="form-control time-input" value="标准快递" readonly="readonly">
+						    </div>
+							<div id="accordProducts">
+									  <ul class='time-value-list' >
+										  <li>
+										  		<div id="accordProductss"></div>
+										  </li>
+									  </ul>
+							</div>
+					</div>
+					</div>
+					</div>
+
+
+					<div class="col-sm-4 col-md-offset-4 p_bottom_10">
+					<input type="button" value="提交订单" disabled="disabled" id="saveBtn" class="btn btn-primary btn-block btn-lg" autocomplete="off" data-toggle="tooltip" data-placement="left" title="请同意协议">
+					</div>
+					<div class="col-sm-12">
+				      <div class="alert alert-danger hidden" id="error" role="alert"></div>
+				    </div>
+				</div>
+				</form>
+
+			</div>
+	</div>
+	<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+         <div class="yto-message"><div  class="loader  loader-tadpole"></div></div>
+    </div>
+  </div>
+  </div>
+	<div class="modal fade" id="myModal2">
+		<div class="modal-dialog">
+			 <div class="modal-content">
+	        	 <div class="yto-message"><div  class="loader  loader-tadpole"></div></div>
+			</div>
+		</div>
+	</div>
+	 <div class="modal fade" id="xieyitype">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">信息提示</h4>
+				</div>
+				
+	<div class="modal-xieyi">
+  </div>
+  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+	</div>		
+		   </div>
+		</div>
+    </div>
+
+	<div class="modal fade" id="success">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">寄件成功</h4>
+				</div>
+				
+	<div class="modal-body">
+  </div>			
+		   </div>
+		</div>
+    </div>
+    <div class="modal fade" id="bg" >
+		<div class="modal-dialog" style="width: 949px;height: 379px;background-image:url('/assets/images/jsd.jpg');margin-top:200px;">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+		</div>
+    </div>
+	<!-- js plugins  -->
+	<script src="../JS/jquery.min.js"></script>
+	<script type="text/javascript">
+	  $(function() {
+		  'use strict';
+		  $("#bg").modal('show');
+			 setTimeout(function(){
+				 $("#bg").modal('hide');
+		          },3000);
+		  $("#yzm").on("click",function(){
+	    	  $(this).attr("src","/vcode.htm?d="+Math.random());
+	      });
+		  var ifok = false;
+           $("#sendRegion").citySelect();
+           $("#receiveRegion").citySelect();
+           var url = "/orderResult.htm";
+           $("#form").formValidation({
+				 framework: 'bootstrap',
+		      	  live:'disabled',
+		          trigger: 'blur',
+		          fields: {
+		        	  Names: {
+		        		  selector: '[name="sendName"],[name="receiveName"]',
+		                  validators: {
+		                      notEmpty: {
+		                          message: '请输入您的姓名'
+		                      },
+		                      stringLength: {
+		                          message: '姓名不要超过32个汉字',
+		                          max: function (value, validator, $field) {
+		                              return 32 - (value.match(/\r/g) || []).length;
+		                          }
+		                      }
+		                  }
+		              },
+		              sendRegion:{
+		            	  selector: '#receiveRegion,#sendRegion',
+		            	  validators: {
+		                      notEmpty: {
+		                          message: '请输入省市区'
+		                      }
+		                  }
+		              },
+		              weight:{
+		            	  selector:'#weight',
+		            	  validators:{
+		            		  numeric:{
+		            			  message:'只能输入数字'
+		            		  },
+		            		  between: {
+		                          min: 0,
+		                          max: 50,
+		                          message: '重量在1-50kg之间'
+		                      },
+		                      stringLength: {
+		                          message: '重量在1-50kg之间',
+		                          max: function (value, validator, $field) {
+		                              return 2 - (value.match(/^[0-9]+([.]{1}[0-9]+){0,1}$/) || []).length;
+		                          }
+		                      }
+		            	  }  
+		              },
+		              Address: {
+		            	  selector: '[name="sendAddress"],[name="receiveAddress"]',
+		                  validators: {
+		                      notEmpty: {
+		                          message: '请输入地址'
+		                      },
+		                      stringLength: {
+		                          message: '地址不要超过128个汉字',
+		                          max: function (value, validator, $field) {
+		                              return 128 - (value.match(/\r/g) || []).length;
+		                          }
+		                      }
+		                  }
+		              },
+		              sendmobile: {
+		            	  selector: '[name="sendMobile"],[name="sendPhone"]',
+		            	  validators: {
+	                	  regexp: {
+	                		  regexp:/^((0\d{2,3}-\d{7,8})|(1[345678]\d{9})|(400\-\d{7}))$/,
+	                    	  message:'请输入正确的手机或电话号码'
+	                	  },
+	                      callback: {
+	                          callback: function(value, validator, $field) {
+	                              var isEmpty = true, message= '手机或电话必填一项',
+	                                  $fields = validator.getFieldElements('sendmobile');
+	                              for (var i = 0; i < $fields.length; i++) {
+	                                  if ($fields.eq(i).val() !== '') {
+	                                	  isEmpty = false;
+	                                  }
+	                              }
+	                              if (!isEmpty) {
+	                                  validator.updateStatus('sendmobile', validator.STATUS_VALID, 'callback');
+	                                  return true;
+	                              }
+	                              return {
+	                            	  valid: false, 
+                                      message: message
+                                  };
+	                          }
+	                      }
+	                 	 }
+		              },
+		              receivemobile: {
+		            	  selector: '[name="receiveMobile"],[name="receivePhone"]',
+		                  validators: {
+		                	  regexp: {
+		                		  regexp:/^((0\d{2,3}-\d{7,8})|(1[345678]\d{9})|(400\-\d{7}))$/,
+		                    	  message:'请输入正确的手机或电话号码'
+		                	  },
+		                      callback: {
+		                          callback: function(value, validator, $field) {
+		                              var isEmpty = true, message= '手机或电话必填一项',
+		                                  $fields = validator.getFieldElements('receivemobile');
+		                              for (var i = 0; i < $fields.length; i++) {
+		                                  if ($fields.eq(i).val() !== '') {
+		                                	  isEmpty = false;
+		                                  }
+		                              }
+		                              if (!isEmpty) {
+		                                  validator.updateStatus('receivemobile', validator.STATUS_VALID, 'callback');
+		                                  return true;
+		                              }
+		                              return {
+		                            	  valid: false, 
+	                                      message: message
+	                                  };
+		                          }
+		                      }
+		                  }
+		              }
+		          }
+		      }).on('success.form.fv', function(e) {
+		            e.preventDefault();
+		            var $form = $(e.target),
+		                fv    = $form.data('formValidation');
+		            $("#error").addClass("hidden");
+		            $.ajax({
+		                url: url,
+		                type: 'post',
+		                data: $form.serialize(),
+		                dataType:"json",
+		                beforeSend : function() {
+		                	$("#saveBtn").attr("disabled", true);
+		                },
+		                success: function(result) {
+		                	$("#saveBtn").attr("disabled", false);
+		                	if(result.success){
+		                		$("[type='text']").val("");
+			      	    		var message = '<div class="yto-message success"><div class="icon-an" > <span class="line tip"></span> <span class="line long"></span> <div class="placeholder"></div><div class="fix"></div> </div><h3 class="yto-message-title">下单成功</h3></div>';
+			      	    		$("#success").modal('show').find(".modal-body").html(message);
+			      	    		fv.resetForm();
+			      	    		ifok = true;
+			      	    		setTimeout(function () { 
+			      	    			window.location.reload(true);
+								  }, 2000);
+							  }else{	  
+								   setTimeout(function(){
+				      	              $("#error").removeClass("hidden").text(result.message);
+				      	    	  },200); 
+							  }
+		                }
+		            });
+		        });
+           
+           $("#success").on("hidden.bs.modal", function() {
+			    $(this).removeData("bs.modal");
+			    $(this).find(".modal-body").empty();
+			    if(ifok){
+			    	window.location.href=window.location.href+"?get=get";
+			    }
+			});
+             
+           $('#saveBtn').tooltip();
+			$('#check').on('ifChecked', function(event){ $("#saveBtn").attr("disabled", false);$('#saveBtn').tooltip('destroy');});
+			$('#check').on('ifUnchecked', function(event){ $("#saveBtn").attr("disabled", true); $('#saveBtn').tooltip('show');});
+			$("#saveBtn").on("click", function(e) {
+				e.preventDefault();
+				$("#form").submit();
+			});
+			$("#sendAddress,#receiveaddress").on("keyup",function() {
+				$("#accordProducts").css("display","block");
+				var sendRegionId =$("#sendRegionId2").val();
+				var receiveRegionId = $("#receiveRegionId2").val();
+				var sendAddress = $("#sendAddress").val();
+				var receiveAddress = $("#receiveaddress").val();
+				$("#accordProducts").css("display","block");
+				$(".weight-value").css("display","none");
+				$(".list-value-position").css("display","none");
+				$(".list-value-appreciation").css("display","none");
+				$("#accordProductss").removeClass("font-color");
+				$("#accordProductss").empty();
+				$("#siteCode").val("");
+				$("#siteName").val("");
+				$("#serviceType").val("");
+				$(".time-input").val(""); 
+				$("#errorWeight").html("");
+				var weigth = $("#weight").val();
+	            if (isNaN(weigth)) {
+	            	$("#errorWeight").css({"color":"red","font-size":"12px"}).html("请输入数字!");
+	            	return false;
+	            }
+	    	    if(weigth.length == 0){
+	    		 	weigth= 1;
+	    	     }
+	    	    if(weigth <= 0 || weigth > 50){
+	    			$("#errorWeight").css({"color":"red","font-size":"12px"}).html("重量必须大于0,小于等于50Kg!");
+	    			return false;
+	    	     }
+	    	   /*  var weigth1 = Math.ceil(weigth); */
+				$.ajax({
+	                url: "/order/searhBnet.htm",
+	                type: 'POST',
+	                data: {"sendRegionId":sendRegionId, "receiveRegionId":receiveRegionId, "sendAddress":sendAddress, "receiveAddress":receiveAddress, "weigth":weigth},	                
+	                success: function(result) {
+	                	if(null != result.data && result.data.isBNet ){
+	                		var x_data = result.data.bNetdeadlineDatas;
+	                		if(null != x_data && x_data.length > 0){
+	                			for(var i =0; i < x_data.length; i++){
+	                				if(x_data[i].flag){
+	                					var effectiveTypeCode = x_data[i].effectiveTypeCode;
+	                					var branchOrgName = result.data.branchOrgName;
+	                					var branchOrgCode = result.data.branchOrgCode;
+	                					$("#siteCode").val(branchOrgCode);
+	                					$("#siteName").val(branchOrgName);
+	                					$("#serviceType").val(effectiveTypeCode);
+	                					$(".time-input").val("计时达");
+	                				}else{
+	                					$("#siteCode").val("");
+	                					$("#siteName").val("");
+	                					$("#serviceType").val("");
+	                					$(".time-input").val("标准快递");
+	                				}
+	                			}
+	                		}
+	                	}else{
+	                		$("#siteCode").val("");
+        					$("#siteName").val("");
+        					$("#serviceType").val("");
+        					$(".time-input").val("标准快递");
+	                	}
+	                },
+	                error:function(){
+	                	$("#siteCode").val("");
+    					$("#siteName").val("");
+    					$("#serviceType").val("");
+    					$(".time-input").val("标准快递");
+	  			  }
+	             });
+			});
+			$(".time-input").click( function() {
+				$("#accordProducts").css("display","block");
+				var sendRegionId =$("#sendRegionId2").val();
+				var receiveRegionId = $("#receiveRegionId2").val();
+				var sendAddress = $("#sendAddress").val();
+				var receiveAddress = $("#receiveaddress").val();
+				$("#accordProducts").css("display","block");
+				$(".weight-value").css("display","none");
+				$(".list-value-appreciation").css("display","none");
+				$(".list-value-position").css("display","none");
+				$("#accordProductss").removeClass("font-color");
+				$("#accordProductss").empty();
+				$("#errorWeight").html("");
+				var weigth = $("#weight").val();
+	            if (isNaN(weigth)) {
+	            	$("#errorWeight").css("color","red").html("请输入数字!");
+	            	return false;
+	            }
+	    	    if(weigth.length == 0){
+	    		 	weigth= 1;
+	    	     }
+	    	    if(weigth <= 0 || weigth > 50){
+	    			$("#errorWeight").css("color","red").html("重量必须大于0,小于等于50Kg!");
+	    			return false;
+	    	     }
+	    	    var weigth1 = Math.ceil(weigth);
+				$.ajax({
+	                url: "/order/searhBnet.htm",
+	                type: 'POST',
+	                data: {"sendRegionId":sendRegionId, "receiveRegionId":receiveRegionId, "sendAddress":sendAddress, "receiveAddress":receiveAddress, "weigth":weigth1},	                
+	                success: function(result) {
+	                	if(null != result.data && result.data.isBNet ){
+	                		var x_data = result.data.bNetdeadlineDatas;
+	                		if(null != x_data && x_data.length > 0){
+	                			var xl_html = "";
+	                			for(var i =0; i < x_data.length; i++){
+	                				if(x_data[i].flag){
+	                					if(null != x_data[i].price){
+		                					xl_html += "<div id = 'value_"+i+"' onclick = \"getAccordProductss(this, "+i+",'" + '计时达' + "','" + x_data[i].effectiveTypeCode + "', '" + result.data.branchOrgName + "', '" + result.data.branchOrgCode + "')\"><span><p>" + '计时达' +"</p><p><strong>" +x_data[i].price+ "</strong>元起</p></span><span><p>" +"预计 <strong>" +x_data[i].sendTime+ "</strong>前 送达</p><p class='p-style'>截止寄件时间     当日" +x_data[i].deadline + "</p></span>  </div>";
+		                				}else{
+		                					xl_html += "<div id = 'value_"+i+"' onclick = \"getAccordProductss(this, "+i+",'" + '计时达' + "','" + x_data[i].effectiveTypeCode + "', '" + result.data.branchOrgName + "', '" + result.data.branchOrgCode + "')\"><span><p>" + '计时达' +"</p></span><span><p>" +"预计 <strong>" +x_data[i].sendTime+ "</strong>前 送达</p><p class='p-style'>截止寄件时间     当日" +x_data[i].deadline + "</p></span>  </div>";
+		                				}
+	                				}else{
+	                					if(null != x_data[i].price){
+		                					xl_html += "<div id = 'value_"+i+"' style='background-color:#ddd;color:#333;'><span><p>" + '计时达' +"</p><p><strong>" +x_data[i].price+ "</strong>元起</p></span><span><p>" +"预计 <strong>" +x_data[i].sendTime+ "</strong>前 送达</p><p class='p-style'>截止寄件时间     当日" +x_data[i].deadline + "</p></span>  </div>";
+		                					
+	                					}else{
+		                					xl_html += "<div id = 'value_"+i+"' style='background-color:#ddd;color:#333;'><span><p>" + '计时达' +"</p></span><span><p>" +"预计 <strong>" +x_data[i].sendTime+ "</strong>前 送达</p><p class='p-style'>截止寄件时间     当日" +x_data[i].deadline + "</p></span>  </div>";
+	                					}
+	                				}
+	                			}
+	                			 xl_html += "<div style='width:94%;' onclick = \"getAccordProductss(this, '" + '' + "','" + '标准快递' + "','" + '' + "', '" + '' + "', '" + '' + "')\"><span><p>标准快递 </span></p><p class='p-style'>运费及时效参考圆通官网</p></div>";
+	                			 $("#accordProductss").empty().append(xl_html);
+	                		}
+	                	}else{
+	                		var xl_html = "<div style='width:94%;' onclick = \"getAccordProductss(this, '" + '' + "','" + '标准快递' + "','" + '' + "', '" + '' + "', '" + '' + "')\"><span><p>标准快递 </span></p><p class='p-style'>运费及时效参考圆通官网</p></div>";
+               			    $("#accordProductss").empty().append(xl_html);
+	                	}
+	                },
+	                error:function(){
+	                	var xl_html = "<div style='width:94%;' onclick = \"getAccordProductss(this, '" + '' + "','" + '标准快递' + "','" + '' + "', '" + '' + "', '" + '' + "')\"><span><p>标准快递 </span></p><p class='p-style'>运费及时效参考圆通官网</p></div>";
+           			    $("#accordProductss").empty().append(xl_html);
+	  			  }
+	             });
+			});
+			//内件品名
+			  var $inp = $('input:text');
+		        $inp.bind('keydown', function (e) {
+		            var key = e.which;
+		            if (key == 13) {
+		                e.preventDefault();
+            }
+		   })
+			$(document).on("mousedown",function(e){
+				if($(e.target).is(".list-value-position")|| $(e.target).closest("ul").is(".list-value-position")
+						||$(e.target).is(".weight-value")|| $(e.target).closest("ul").is(".weight-value")
+						||$(e.target).is(".list-value-appreciation")|| $(e.target).closest("ul").is(".list-value-appreciation")
+						||$(e.target).is("#accordProducts")|| $(e.target).closest("#accordProducts").is("div")
+				){
+					return false;
+				}else{
+					$(".list-value-position , .weight-value , .list-value-appreciation , #accordProducts").css("display","none");
+				}
+				});
+			
+			 $(".user-input").click(function(){
+				 $(".list-value-position").css("display","block");
+				 $(".weight-value").css("display","none");
+				 $(".list-value-appreciation").css("display","none");
+				 $("#accordProducts").css("display","none");
+			 })
+			 $(".list-value-position input").each(function(index){
+				 $(this).click(function(){
+					 $(".list-value-position input ").removeClass("add-style");
+					 $(".list-value-position input").eq(index).addClass("add-style");
+					$(".user-input").val( $(".list-value-position input").eq(index).val());
+					$(".list-value-position").css("display","none");
+				    });
+					
+				 })
+			 })  
+			$(".weight-input").click(function(){
+				 $(".weight-value").css("display","block");
+				 $(".list-value-position").css("display","none");
+				 $(".list-value-appreciation").css("display","none");
+				 $("#accordProducts").css("display","none");
+			 $(".weight-value input").each(function(index){
+				 $(this).click(function(){
+					
+					 $(".weight-value input ").removeClass("add-style");
+					 $(".weight-value input").eq(index).addClass("add-style");
+					 var weigth = $(".weight-value input").eq(index).val();
+					 var weigths = weigth.split("KG");
+					 $(".weight-input").val( weigths[0]);
+					 $(".weight-value").css("display","none");
+				 })
+			 })
+			
+		});
+	  $(".appreciation-input").click(function(){
+			 $(".list-value-appreciation").css("display","block");
+			 $(".list-value-position").css("display","none");
+			 $(".weight-value").css("display","none");
+			 $("#accordProducts").css("display","none");
+		 })
+		 $(".list-value-appreciation input").each(function(index){
+			 $(this).click(function(){
+				 $(".list-value-appreciation input ").removeClass("add-style");
+				 $(".list-value-appreciation input").eq(index).addClass("add-style");
+				$(".appreciation-input").val( $(".list-value-appreciation input").eq(index).val());
+				$(".list-value-appreciation").css("display","none");
+			    });
+				
+			 })
+		
+	  function getAccordProductss(val, i, effectiveTypeName, effectiveTypeCode, branchOrgName, branchOrgCode){
+			$("#siteCode").val(branchOrgCode);
+			$("#siteName").val(branchOrgName);
+			$("#serviceType").val(effectiveTypeCode);
+			$(".time-input").css("display","block").val(effectiveTypeName);
+			$("#accordProducts").css("display","none");
+		}
+ </script>
+</body>

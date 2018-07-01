@@ -1,0 +1,297 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html class="p_AFMaximized" dir="ltr" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>创建帐户</title>
+<link data-afr-stylesheet="true" rel="stylesheet" type="text/css"
+	href="../CSS/register.css">
+<script type="text/javascript" charset="UTF-8" language="javascript"
+	src="../JS/jquery.js"></script>
+<script type="text/javascript" charset="UTF-8" language="javascript"
+	src="../JS/register.js"></script>
+</head>
+<body class="x27t x130 p_AFMaximized" style="cursor: auto;">
+	<input type="hidden" id="oracle.adf.view.faces.RICH_UPDATE"
+		value="dirty">
+	<div id="docCreate" class="p_AFHoverTarget">
+		<div id="wrapper" class="x23m">
+
+			<div id="content-create"
+				class="wrapper-responsive-create x27u x22i xss">
+				<div class="xv8 p_AFCore p_AFDefault">
+					<div class="x5s p_AFCore p_AFDefault" id="content-create::content">
+						<div id="headeritems" class="x1a">
+							<div>
+								<div id="s0" style="margin-top: 15px"></div>
+							</div>
+							<div>
+								<span class="x246">创建自己的帐户</span>
+							</div>
+							<div>
+								<div id="s1" style="margin-top: 25px"></div>
+							</div>
+						</div>
+						<span class="x241">已有帐户？</span><a id="signinlink"
+							class="x24e xgn p_AFTextOnly" data-afr-fcs="true"
+							href="../index.html" data-afr-tlen="2" role="link"><span
+							id="signinlink::text" class="x17j">登录</span></a>
+						<div id="s4" style="margin-top: 15px"></div>
+						<div id="s5" style="margin-top: 30px"></div>
+						<td class="x4w" colspan="1"><table cellpadding="0"
+								cellspacing="0" border="0" width="100%" summary=""
+								role="presentation">
+								<tbody>
+									<tr class="x23s plm-wrapper xsv" id="users_right">
+										<td class="x15 x4z"><label
+											class="af_panelLabelAndMessage_label-text">账号种类</label></td>
+										<td valign="top" class="xvb xt5"><span id="j_id61"
+											class="x27o x1a"> <span id="state" class="x24o x1z"><select
+													id="users_right" name="state" class="x2h" title="-选择-"><option
+															value="">-选择-</option>
+														<option value="2">员 工</option>
+														<option value="3">客 户</option>
+														<option value="4">驾驶员</option>
+														<option value="5">快递员</option></select><label for="state::content"
+													class="x9w">账号种类</label></span></span></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td class="x51"><div id="j_id16:j_id17">
+												<div id="msgRight"></div>
+											</div></td>
+									</tr>
+
+									<tr class="x23s plm-wrapper-helptext xsv" id="emailPanel">
+										<td class="x15 x4z"><label
+											class="af_panelLabelAndMessage_label-text">账号名称</label></td>
+										<td valign="top" class="xvb xt5"><table cellpadding="0"
+												cellspacing="0" border="0" summary="" role="presentation">
+												<tbody>
+													<tr>
+														<td><span id="j_id9" class="x27o x1a"><span
+																id="email" class="x24j x1u"><input id="users_id"
+																	name="email" class="x25" maxlength="80" type="text"><label
+																	for="email::content" class="x9w">账号名称</label></span></span></td>
+														<td class="xvd"><span id="emailinfo"
+															class="x24y helpText-responsive show-desktop">账号是您的登录凭证。</span></td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td class="x51"><span id="msgId"
+											class="helpText-responsive show-mobile">请牢记您的账号。</span></td>
+									</tr>
+									<tr class="x23s plm-wrapper-helptext xsv" id="passwordPanel">
+										<td class="x15 x4z"><label
+											class="af_panelLabelAndMessage_label-text">密码</label></td>
+										<td valign="top" class="xvb xt5"><table cellpadding="0"
+												cellspacing="0" border="0" summary="" role="presentation">
+												<tbody>
+													<tr>
+														<td><span id="j_id12" class="x27o x1a"><span
+																id="password" class="x24j x1u"><input
+																	id="users_password" name="password" class="x25"
+																	maxlength="80" type="password" autocomplete="off"><label
+																	for="password::content" class="x9w">密码</label></span></span></td>
+														<td class="xvd"><span id="passwordinfo"
+															class="x24y helpText-responsive show-desktop">密码必须同时包含大小写字母和至少
+																1 个数字，不得与您电子邮件的任何部分相同，并且必须至少包含 8 个字符。</span></td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td class="x51"><div id="j_id13:j_id14">
+												<div id="afr::msgForpassword"></div>
+											</div></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td class="x51"><span id="passwordInfoResponsive"
+											class="helpText-responsive show-mobile">密码必须同时包含大小写字母和至少
+												1 个数字，不得与您电子邮件的任何部分相同，并且必须至少包含 8 个字符。</span></td>
+									</tr>
+									<tr class="x23s plm-wrapper xsv" id="retypePasswordPanel">
+										<td class="x15 x4z"><label
+											class="af_panelLabelAndMessage_label-text">重新键入密码</label></td>
+										<td valign="top" class="xvb xt5"><span id="j_id15"
+											class="x27o x1a"><span id="retypePassword"
+												class="x24j x1u"><input id="repeat_password"
+													name="retypePassword" class="x25" maxlength="80"
+													type="password" autocomplete="off"></span></span></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td class="x51"><div id="j_id16:j_id17">
+												<div id="msgPassword"></div>
+											</div></td>
+									</tr>
+								</tbody>
+							</table></td>
+						</tr>
+						</tbody>
+						</table>
+					</div>
+					<div id="subsecCreateAccount" class="x251 x27v x19">
+						<table cellpadding="0" cellspacing="0" border="0" summary=""
+							role="presentation" style="width: auto">
+							<tbody>
+								<tr>
+									<td class="x4w" colspan="1"><table summary=""
+											role="presentation">
+											<tbody>
+												<tr>
+													<td></td>
+													<td class="x51"><div id="j_id18"
+															style="margin-top: 25px"></div></td>
+												</tr>
+												<tr class="x23s plm-wrapper xsv">
+													<td class="x15 x4z"><label
+														class="af_panelLabelAndMessage_label-text">姓名</label></td>
+													<td valign="top" class="xvb xt5"><span id="j_id50"
+														class="x27o x1a"><span id="jobTitle"
+															class="x24i x1u loqateAutocompleteTitles ui-autocomplete-input"><input
+																id="users_name" name="jobTitle" class="x25"
+																maxlength="240" type="text"><label
+																for="jobTitle::content" class="x9w">姓名</label></span></span></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td class="x51"><div id="j_id51:j_id77" class="x269">
+															<div id="msgName"></div>
+														</div></td>
+												</tr>
+												<tr class="x23s plm-wrapper xsv">
+													<td class="x15 x4z"><label
+														class="af_panelLabelAndMessage_label-text">电话</label></td>
+													<td valign="top" class="xvb xt5"><span id="j_id52"
+														class="x27o x1a"><span id="workPhone"
+															class="x24m x1u"><input id="users_phonenum"
+																name="workPhone" class="x25 jq_watermark"
+																maxlength="240" type="text"
+																data-jq-watermark="processed"
+																placeholder="e.g. +86.888.888.8888"><label
+																for="workPhone::content" class="x9w">电话</label></span></span></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td class="x51"><div id="j_id53:j_id78" class="x269">
+															<div id="msgPhonenum"></div>
+														</div></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td class="x51"><div id="j_id54"
+															style="margin-top: 25px"></div></td>
+												</tr>
+												<tr class="x23s plm-wrapper xsv" id="address1Panel">
+													<td class="x15 x4z"><label
+														class="af_panelLabelAndMessage_label-text">地址</label></td>
+													<td valign="top" class="xvb xt5"><span id="j_id57"
+														class="x27o x1a"><span id="address1"
+															class="x24i x1u"><input id="users_address"
+																name="address1" class="x25" maxlength="240" type="text"><label
+																for="address1::content" class="x9w">地址</label></span></span></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td class="x51"><div id="j_id53:j_id78" class="x269">
+															<div id="msgAddress"></div>
+														</div></td>
+												</tr>
+												<tr class="x23s plm-wrapper xsv">
+													<td class="x15 x4z"><label
+														class="af_panelLabelAndMessage_label-text">生日</label></td>
+													<td valign="top" class="xvb xt5"><table
+															cellpadding="0" cellspacing="0" border="0" summary=""
+															role="presentation">
+															<tbody>
+																<tr>
+																	<td><span id="j_id12" class="x27o x1a"><span
+																			id="users_birthday" class="x24j x1u"><input
+																				id="users_birthday" name="password" class="x25"
+																				maxlength="80" type="password" autocomplete="off"><label
+																				for="password::content" class="x9w">生日</label></span></span></td>
+																	<td class="xvd"><span id="passwordinfo"
+																		class="x24y helpText-responsive show-desktop">生日格式为年、月、日组合的8位数字，例如19881122。</span></td>
+																</tr>
+															</tbody>
+														</table></td>
+												</tr>
+												<tr class="x23s plm-wrapper xsv" id="statePanel">
+													<td class="x15 x4z"><label
+														class="af_panelLabelAndMessage_label-text">性别</label></td>
+													<td valign="top" class="xvb xt5"><span id="j_id63"
+														class="x27o x1a"><span id="state" class="x24o x1z"><select
+																id="users_sex" name="state" class="x2h" title="-选择-"><option
+																		value="">-选择-</option>
+																	<option value="0">男</option>
+																	<option value="1">女</option>
+															</select><label for="state::content" class="x9w">性别</label></span></span></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td class="x51"><div id="j_id64:j_id83">
+															<div id="msgSex"></div>
+														</div></td>
+												</tr>
+												<tr class="x23s plm-wrapper xsv" id="postalCodePanel">
+													<td class="x15 x4z"><label
+														class="af_panelLabelAndMessage_label-text">邮政编码</label></td>
+													<td valign="top" class="xvb xt5"><span id="j_id65"
+														class="x27o x1a"><span id="postalCode"
+															class="x24n x1u"><input id="users_post"
+																name="postalCode" class="x25" maxlength="50" type="text"><label
+																for="postalCode::content" class="x9w">邮政编码</label></span></span></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td class="x51"><div id="j_id67"
+															style="margin-top: 7px"></div></td>
+												</tr>
+
+
+												<tr>
+													<td></td>
+													<td class="x51"><span
+														class="form-footer-disclaimer-text">单击下方的“创建帐户”按钮，即表示您了解并同意在不违反
+															<a
+															href="https://www.oracle.com/us/legal/terms/index.html"
+															target="_blank">Oracle.com 使用条款</a>和 <a
+															href="https://www.oracle.com/cn/legal/privacy/index.html"
+															target="_blank">Oracle 隐私政策</a>的情况下使用 Oracle 网站，其中包括
+															Oracle 可能会将您在本网站注册时提供的个人信息转移至其全球的子公司以及为 Oracle
+															提供服务的第三方实体。
+													</span></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td class="x51"><div id="j_id72"
+															style="margin-top: 7px"></div></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td class="x51"><div id="cb1"
+															class="x24u xfl p_AFTextOnly" role="presentation">
+															<a onclick="registerFunction();return false"
+																data-afr-fcs="true" class="xfn" role="button"><span
+																class="xfv">创建</span></a>
+														</div></td>
+												</tr>
+											</tbody>
+										</table></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="xv0 p_AFCore p_AFDefault"></div>
+		</div>
+	</div>
+
+</body>
+</html>
